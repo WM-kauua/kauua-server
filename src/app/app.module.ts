@@ -39,13 +39,13 @@ import { AreaLoggedRouteComponent }			from './garde/area-logged-route.component'
 import { NavigationLoggedRouteComponent }		from './navigation/navigation-angular-logged.component';
 import { KawaSidenavService }				from './kawa-sidenav.service';
 import { KawaSidenavMenuComponent }			from './kawa-sidenav-menu.component';
-import { ListeDeCoursesModule }				from './kawaModules/liste_de_courses/liste-de-courses.module';
+//import { ListeDeCoursesModule }				from './kawaModules/liste_de_courses/liste-de-courses.module';
 import { KawaModuleStackService }			from './kawa-kawaModule-stack.service';
 import { ServeurService }				from './serveur.service' ;
 
-import { PremierModule }  from './kawaModules/premierModule/PremierModule.module';
-import { GestionUtilisateurModule }  from './kawaModules/gestionUtilisateur/GestionUtilisateurModule.module';
-import { EspaceDeStockageModule }  from './kawaModules/espaceDeStockage/EspaceDeStockageModule.module';
+//import { PremierModule }  from './kawaModules/premierModule/PremierModule.module';
+//import { GestionUtilisateurModule }  from './kawaModules/gestionUtilisateur/GestionUtilisateurModule.module';
+//import { EspaceDeStockageModule }  from './kawaModules/espaceDeStockage/EspaceDeStockageModule.module';
 const appRoutes: Routes=[
   { path: 'register',
     component: RegisterComponent,
@@ -147,9 +147,9 @@ const appRoutes: Routes=[
       appRoutes, { enableTracing: true, useHash: true }
     ),
 
-PremierModule,
-GestionUtilisateurModule,
-EspaceDeStockageModule,
+//PremierModule,
+//GestionUtilisateurModule,
+//EspaceDeStockageModule,
     BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
