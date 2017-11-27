@@ -1,0 +1,33 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div *ngFor="let kawaModule of kawaModules">
+  {{ kawaModule.name }}, {{ kawaModule.naviPath }}, {{ kawaModule.viewAreaPath }}
+</div>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="kawa-switch col-xs-3 col-md-2">
+        &#x7C;&#x3C;
+      </div>
+
+      <div class="col-xs-9 col-md-10">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Server<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!-- <li><a href="#/login">Login</a></li> -->
+              <!-- <li><a href="#/register">Register</a></li> -->
+              <li><a (click)="routeTo('arealogin')">Login</a></li>
+              <li><a (click)="routeTo('arearegister')">Register</a></li>
+              <li><a (click)="routeTo('premierModuleViewAreaRoute')">premierModule</a></li>
+              <li><a (click)="toggleDrawer()">openDrawer  </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    </div> <!-- end of row -->
+  </div>
+</nav>
+

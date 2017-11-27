@@ -1,0 +1,28 @@
+.kawa-switch{
+  padding: 15px;
+  text-align: center;
+  color: slateBlue;
+  text-shadow: 0 0 2px mediumSeaGreen;
+}
+
+.kawa-switch:hover {
+  cursor: pointer;
+  color: #4DB8FF;
+}
+
+.kawa-menu-button{
+  padding: 15px;
+  border: 0;
+  color: slateBlue;
+  background-color: #FFFFFF;
+}
+
+.kawa-menu-button:hover{
+  cursor: pointer;
+  color: #4DB8FF;
+  background-color: #99FFCC55;
+}
+
+.kawa-menu-bar{
+  background-color: white;
+}

@@ -1,0 +1,44 @@
+/**
+ * kawa auto generated app.module.ts :
+ *   it gather the list of modules from the server, 
+ *   and recreate the imports statements and declaration based on
+ *   skel in ./server/scripts/skel.* files by injection, concatenation
+ *
+ */
+
+import { BrowserModule }                 	        from '@angular/platform-browser';
+import { BrowserAnimationsModule }              	from '@angular/platform-browser/animations';
+import { NgModule }                           		from '@angular/core';
+import { FormsModule, ReactiveFormsModule }             from '@angular/forms';
+import { RouterModule, Routes }                		from '@angular/router';
+import { HttpModule }                           	from '@angular/http';
+import { CUSTOM_ELEMENTS_SCHEMA }               	from '@angular/core';
+import { CommonModule }					from '@angular/common';
+
+// material module :
+import { FeatureMaterialModule }			from './features/feature-material-module.module';
+
+import { KawaServerSidenavComponent }			from './side/kawaserver-sidenav.component';
+import { AppComponent }                         	from './app.component';
+import { RegisterComponent }                    	from './register.component';
+import { NavbarComponent }                      	from './navbar.component';
+import { sameAsValidatorDirective }             	from './same-as.directive';
+import { onlyAlphaNumValidatorDirective }       	from './only-alphanum.directive';
+import { UserService }                          	from './user.service';
+import { StorageService }                       	from './storage.service';
+import { InitComponent }                        	from './init.component';
+//import { GuardPageComponent }                   	from './garde/guard-page.component';
+import { GuardPageComponent }				from './garde/guard-page-injected.component';
+//import { NavigationComponent }                  	from './navigation/navigation.component';
+import { NavigationComponent }				from './navigation/navigation-angular.component';
+import { HomeComponent }                        	from './home.component';
+import { KawaModuleRetrievalService }			from './kawaModule-retrieval.service';
+import { AreaLoggedRouteComponent }			from './garde/area-logged-route.component';
+//import { NavigationLoggedRouteComponent }		from './navigation/navigation-logged-route.component';
+import { NavigationLoggedRouteComponent }		from './navigation/navigation-angular-logged.component';
+import { KawaSidenavService }				from './kawa-sidenav.service';
+import { KawaSidenavMenuComponent }			from './kawa-sidenav-menu.component';
+import { ListeDeCoursesModule }				from './kawaModules/liste_de_courses/liste-de-courses.module';
+import { KawaModuleStackService }			from './kawa-kawaModule-stack.service';
+import { ServeurService }				from './serveur.service' ;
+

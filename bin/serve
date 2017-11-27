@@ -1,0 +1,27 @@
+const http=require('http');
+const app=require(__dirname+'/../app');
+const fs = require('fs');
+
+let port = parseInt(process.env.PORT, 10) || 3005;
+try{
+  let fichier = __dirname+'/../config/config.json';
+  let data = fs.readFileSync( fichier );
+  console.log('data: '+data);
+  let config = JSON.parse(data) ;
+  console.log('config '+config);
+  port = config.port ;
+  console.log('port : '+port);
+}catch(err){
+  console.log('file system error reading ./config/config.json, '+err);
+}
+
+app.set('port',port);
+
+const server = http.createServer(app);
+
+const io = require('socket.io')(server);
+require('../server/socket.io')(io);
+
+server.listen(port);
+
+

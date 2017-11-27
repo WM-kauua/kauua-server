@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div *ngIf="isErrorServer" class="alert alert-danger">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        {{ responseErrorMessage }}
+      </div>
+   </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-10 col-lg-8">
+      <md-card>
+        <md-card-title>
+          {{ title }}
+        </md-card-title>
+        <md-card-content>
+          <!-- start of form -->
+            <form>
+                  <md-form-field>
+                    <input mdInput [(ngModel)]="user.name" placeholder="Identifiant" [formControl]="identifiantControl">
+                    <md-error *ngIf="identifiantControl.hasError('pattern')">
+                      Votre identifiant ne peut tre compos que de valeurs alphaNumrique.
+                    </md-error>
+                    <md-error *ngIf="identifiantControl.hasError('minLength')">
+                      Votre identifiant doit tre de 3 char min.
+                    </md-error>
+                    <md-error *ngIf="identifiantControl.hasError('required')">
+                      Identifiant requis.
+                    </md-error>
+                  </md-form-field>
+                  <md-form-field>
+                    <input mdInput [(ngModel)]="user.password" type="password" placeholder="Mot de pase" [formControl]="passwordControl">
+                    <md-error *ngIf="passwordControl.hasError('minLength')">
+                      Votre mot de passe doit faire plus de 6 char de long.
+                    </md-error>
+                    <md-error *ngIf="password.control.hasError('required')">
+                      Votre mot de passe est requis.
+                    </md-error>
+                  </md-form-field>
+              <div *ngIf="title==='Enregistrement'">
+                    <md-form-field>
+                      <input mdInput [(ngModel)]="verification" type="password" placeholder="Répétition du mot de passe" [formControl]="repeatControl">
+                      <md-error *ngIf="repeatControl.hasError('sameAs')">
+                        Les deux champs mot de passe ne correspondent pas.
+                      </md-error>
+                      <md-error *ngIf="repeatControl.hasError('required')">
+                        Ce champ est requis
+                      </md-error>
+                    </md-form-field>
+              </div>
+            </form>
+          <!-- end of form -->
+        </md-card-content>
+      </md-card>
+    </div>
+  </div>
+
+</div>

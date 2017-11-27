@@ -1,0 +1,35 @@
+<h1 class="kawa-register">
+{{ title }}, {{ user.name }}, {{ user.password }}, {{ verification }}
+</h1>
+<div class="container container-fluid">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="input-group">
+        <span class="input-group-addon" id="kawa-css-namespace-identifiant" >Identifiant</span>
+        <input [(ngModel)]="user.name" type="text" class="form-control" placeholder="Pseudo" aria-describedby="kawa-css-namespace-identifiant">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="input-group">
+        <span class="input-group-addon" id="kawa-css-namespace-password" >Mot de passe</span>
+        <input [(ngModel)]="user.password" type="password" class="form-control" aria-describedby="kawa-css-namespace-password">
+      </div>
+    </div>
+  </div>
+  <div *ngIf="title=='register'">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="input-group">
+          <span class="input-group-addon" id="kawa-css-namespace-verif-password" >Vérification</span>
+          <input [(ngModel)]="verification" type="password" class="form-control" aria-describedby="kawa-css-namespace-verif-password">
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-1 col-sm-offset-4">
+      <button class="btn btn-default">Envoyer</button>
+    </div>
+  </div>
+</div>

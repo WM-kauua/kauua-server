@@ -1,0 +1,9 @@
+    BrowserModule,
+    FormsModule,
+    HttpModule
+  ],
+  providers: [UserService, StorageService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+

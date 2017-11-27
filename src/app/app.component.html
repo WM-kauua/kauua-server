@@ -1,0 +1,15 @@
+<!-- <router-outlet></router-outlet> -->
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="push" opened="false" >
+    <router-outlet name="kawamenu"></router-outlet>
+  </mat-sidenav>
+
+
+<div class="kawa-mainContent">
+  <router-outlet name="kawanavi"></router-outlet> 
+  <router-outlet name="kawaviewarea"></router-outlet>
+</div>
+</mat-sidenav-container>
+<!-- <router-outlet></router-outlet> -->
+
+

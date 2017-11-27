@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <div *ngIf="isErrorServer" class="alert alert-danger">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        {{ responseErrorMessage }}
+      </div>
+   </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+      <mat-card>
+        <mat-card-title>
+          {{ title }}
+        </mat-card-title>
+        <mat-card-content>
+          <!-- start of form -->
+            <form>
+              <div class="row">
+                <div class="col-10 col-offset-1">
+                  <mat-form-field>
+                    <input matInput [(ngModel)]="user.name" placeholder="Identifiant" name="userName" 
+                      [formControl]="identifiantControl" >
+                    <mat-error *ngIf="identifiantControl.hasError('pattern')">
+                      Votre identifiant ne peut n'être composé que de valeurs alpha-numérique.
+                    </mat-error>
+                    <mat-error *ngIf="identifiantControl.hasError('minlength')">
+                      Votre identifiant doit être de 3 char min.
+                    </mat-error>
+                    <mat-error *ngIf="identifiantControl.hasError('required')">
+                      Identifiant requis.
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-10 col-offset-1">
+                  <mat-form-field>
+                    <input matInput [(ngModel)]="user.password" type="password" placeholder="Mot de pase" 
+                      [formControl]="passwordControl" >
+                    <mat-error *ngIf="passwordControl.hasError('minlength')">
+                      Votre mot de passe doit faire plus de 6 char de long.
+                    </mat-error>
+                    <mat-error *ngIf="passwordControl.hasError('required')">
+                      Votre mot de passe est requis.
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              
+              <div *ngIf="title==='Enregistrement'">
+                <div class="row">
+                  <div class="col-10 col-offset-1">
+                    <mat-form-field>
+                      <input matInput [(ngModel)]="verification" type="password" placeholder="Répétition du mot de passe" 
+                        [formControl]="repeatControl" >
+                      <mat-error *ngIf="repeatControl.hasError('sameAs')">
+                        Les deux champs mot de passe ne correspondent pas.
+                      </mat-error>
+                      <mat-error *ngIf="repeatControl.hasError('required')">
+                        Ce champ est requis.
+                     </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </form>
+          <!-- end of form -->
+        </mat-card-content>
+          <mat-card-actions>
+              <button mat-raised-button (click)="save()" 
+                [disabled]="identifiantControl.invalid || passwordControl.invalid || (title==='Enregistrement' && repeatControl.invalid)">
+                <span *ngIf="title==='Enregistrement'">Enregistrer</span>
+                <span *ngIf="title==='Connexion'">Connecter</span>
+              </button>
+          </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+
+</div>

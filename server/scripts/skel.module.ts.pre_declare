@@ -1,0 +1,101 @@
+const appRoutes: Routes=[
+  { path: 'register',
+    component: RegisterComponent,
+    data: { title: 'Enregistrement', register: 'true' }
+  },
+  { path: 'login',
+    component: RegisterComponent,
+    data: { title: 'Connexion' }
+  },
+  { path: 'init',
+    component: InitComponent,
+    data: { title: 'Initialisation' }
+  },
+  { path: 'arealogin',
+    component: GuardPageComponent,
+    data: { title: 'Connexion' },
+    outlet: 'kawaviewarea'
+  },
+  {
+    path: 'arearegister',
+    component: GuardPageComponent,
+    data: { title: 'Enregistrement' },
+    outlet: 'kawaviewarea'
+  },
+  {
+    path: 'navigationstart',
+    component: NavigationComponent,
+    outlet: 'kawanavi',
+  },
+  /*{
+    path: 'kawamenuload',
+    component: KawaSidenavMenuComponent,
+    outlet: 'kawamenu'
+  },*/
+  {
+    path: 'kawamenuload',
+    component: KawaServerSidenavComponent,
+    outlet: 'kawamenu'
+  },
+  {
+    path: 'navigationLoggedRoute',
+    component: NavigationLoggedRouteComponent,
+    outlet: 'kawanavi'
+  },
+  {
+    path: 'areaLoggedRoute',
+    component: AreaLoggedRouteComponent,
+    outlet: 'kawaviewarea'
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+    children: [
+      { path: 'innavigationstart',
+        component: NavigationComponent,
+        outlet: 'kawanavi'
+      },
+      { path: 'inarearegister',
+        component: GuardPageComponent,
+        data: { title: 'Enregistrement' },
+        outlet: 'kawaviewarea'
+      },
+      { path: 'inarealogin',
+        component: GuardPageComponent,
+        data: { title: 'Connexion' },
+        outlet: 'kawaviewarea'
+      }
+    ]
+  },
+  { path: '',
+    redirectTo: 'navigationstart',
+    pathMatch: 'full'
+  }/*,
+  { path: '**',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },*/
+]
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    RegisterComponent,
+    NavbarComponent,
+    InitComponent,
+    sameAsValidatorDirective,
+    onlyAlphaNumValidatorDirective,
+    GuardPageComponent,
+    NavigationComponent,
+    HomeComponent,
+    AreaLoggedRouteComponent,
+    NavigationLoggedRouteComponent,
+    KawaSidenavMenuComponent,
+    KawaServerSidenavComponent
+  ],
+  imports: [
+    RouterModule.forRoot(
+      appRoutes, { enableTracing: true, useHash: true }
+    ),
+

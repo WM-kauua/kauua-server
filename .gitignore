@@ -1,0 +1,58 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db
+
+## Ignore all kawamodules user interfaces hosted in ./src/app/kawaModules
+src/app/kawaModules/
+
+## Ignore all kawamodules server plugin hosted in ./server/modules
+server/modules/
+
+## Ignore espace de stockage kawamodules storage dir
+fileSystemExposure/
+
+## Ignore config file ( eccess to database )
+server/config/config.json
+
+## Ignore cache, it's rebuilt everytime
+cache/
+

@@ -1,0 +1,62 @@
+#!/usr/bin/env node
+
+/**
+ *  initdb
+ *   init the prod, dev, and test databases
+ * 
+ */
+
+let mode = [ "test", "development", "production"] ;
+
+const { Client } = require('pg');
+const config = require(__dirname+'/../server/config/config.json');
+let client = [];
+
+Object.keys(config).forEach( (mode) => {
+  client.push(new Client({
+    user: config[mode].username,
+    password: config[mode].password,
+    host: config[mode].host,
+    port: config[mode].port
+  }));
+});
+
+const colors = require ('colors');
+
+console.log(colors.cyan('  - Starting initdb.js'));
+client.forEach( (client,index) => {
+  console.log(colors.cyan(' now processing : '+mode[index]));
+  client.connect()
+    .then( () => console.log(colors.green('     Connected')))
+    .catch( error => { console.log(error) ; console.log(colors.red('      Error connecting databaase')); });
+
+  console.log(colors.cyan('    Recreating Database'));
+  client.query('DROP DATABASE IF EXISTS '+ config[mode[index]].database+';')
+    .then( ok => {
+      console.log(ok) ;
+      console.log('        database erased'.green);
+      client.query('CREATE DATABASE '+config[mode[index]].database+';')
+        .then( ok => {
+          console.log(ok) ;
+          console.log('        database created'.green);
+          client.end()
+            .then( () => console.log(' client disconnected '))
+            .catch( err => console.log(err));
+        })
+        .catch( err => {
+          console.log(err);
+          console.log('        database not created'.red);
+          client.end()
+            .then( () => console.log('client disconnected'))
+            .catch( err => console.log(err))
+        });
+    })
+    .catch( err => {
+      console.log(err);
+      console.log('        database not erased'.red);
+      client.end()
+        .then( () => console.log( 'client disconnected' ))
+        .catch( err => console.log(err));
+    });
+
+});

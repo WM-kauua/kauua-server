@@ -1,0 +1,24 @@
+.kawa-sidenav-toolbar {
+  display: flex;
+  flex-direction: column;
+}
+
+.listemoduleelement {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.kawa-module-install {
+  height: 70%;
+}
+
+.shoppingelement {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.kawaModule-listElement:hover {
+  cursor: pointer;
+  color: #FFFF99;
+}
+

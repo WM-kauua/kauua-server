@@ -1,0 +1,8 @@
+<div class="kawa-sidenav-toolbar">
+  <button mat-icon-button class="listemoduleelement"><mat-icon>reorder</mat-icon></button>
+  <div class="kawa-module-install">
+    <div *ngFor="let kawaModule of listeDeModules;let i=index;" (click)="selectModule(i)" class="kawaModule-listElement">{{kawaModule.name}}</div>
+  </div>
+  <button mat-icon-button class="shoppingelement"><mat-icon>add_shopping_cart</mat-icon></button>
+</div>
+

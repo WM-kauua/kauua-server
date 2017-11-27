@@ -1,0 +1,23 @@
+<div class="cotainer-fluid">
+  <div class="row">
+    <div class="col-xs-10 offset-xs-1">
+      <mat-card>
+        <mat-card-title>Configuration serveur</mat-card-title>
+        <mat-card-content>
+          <mat-form-field>
+            <input matInput placeholder="Identifiant" [(ngModel)]="serveur.identifiant">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Ip" [(ngModel)]="serveur.ip">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="port" [(ngModel)]="serveur.port">
+          </mat-form-field>
+        </mat-card-content> 
+        <mat-card-actions>
+          <button mat-raised-button (click)="setInfo()" [disabled]="!isAdmin">Set</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

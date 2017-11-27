@@ -1,0 +1,11 @@
+.kawa-sidenav{
+  width: 30%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+html, body, material-app, md-sidenav-container, .kawa-mainContent{
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}

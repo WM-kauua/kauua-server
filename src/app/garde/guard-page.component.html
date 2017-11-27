@@ -1,0 +1,75 @@
+<div class="container container-fluid">
+ <div *ngIf="isErrorServer" class="alert alert-danger">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        {{ responseErrorMessage }}
+      </div>
+   </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="input-group">
+        <span class="input-group-addon" id="kawa-css-namespace-identifiant" >Identifiant</span>
+        <input [(ngModel)]="user.name" type="text" class="form-control" placeholder="Pseudo" id="usernameId"
+         required minlength="3" #username="ngModel" aria-describedby="kawa-css-namespace-identifiant" onlyAlphaNum >
+      </div>
+      <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+        <div *ngIf="username.errors.required">
+          Nom requis
+        </div>
+        <div *ngIf="username.errors.minlength">
+          Le nom doit contenir au moins 3 chars.
+        </div>
+        <div *ngIf="username.errors.onlyAlphaNum">
+          Le nom ne peut contenir que des characteres alpha numerique
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="input-group">
+        <span class="input-group-addon" id="kawa-css-namespace-password" >Mot de passe</span>
+        <input [(ngModel)]="user.password" type="password" class="form-control" aria-describedby="kawa-css-namespace-password"
+         required minlength="5" #userpassword="ngModel" >
+      </div>
+      <div *ngIf="userpassword.invalid && (userpassword.dirty || userpassword.touched)" class="alert alert-danger">
+        <div *ngIf="userpassword.errors.required">
+          Mot de passe requis.
+        </div>
+        <div *ngIf="userpassword.errors.minlength">
+          Taille du mot de passe au moins 5 chars.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="title=='Enregistrement'">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="input-group">
+          <span class="input-group-addon" id="kawa-css-namespace-verif-password" >Verification</span>
+          <input [(ngModel)]="verification" type="password" class="form-control" aria-describedby="kawa-css-namespace-verif-password"
+           required [sameAs]="user.password" #userpasswordverify="ngModel" >
+        </div>
+        <div *ngIf="userpasswordverify.invalid && (userpasswordverify.dirty || userpasswordverify.touched)" class="alert alert-danger">
+          N'est pas identique au mot de passe
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-1 col-sm-offset-4">
+      <button class="btn btn-default" [disabled]="username.invalid || userpassword.invalid || (userpasswordverify && userpasswordverify.invalid)"
+        (click)="save()">Envoyer</button>
+    </div>
+    <div class="col-sm-1">
+      <button class="btn btn-default" (click)="check()">Check</button>
+    </div>
+  </div>
+</div>
+

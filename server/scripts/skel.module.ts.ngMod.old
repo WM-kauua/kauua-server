@@ -1,0 +1,33 @@
+@NgModule({
+  declarations: [
+    AppComponent,
+    RegisterComponent,
+    NavbarComponent,
+    InitComponent,
+    sameAsValidatorDirective,
+    onlyAlphaNumValidatorDirective,
+    GuardPageComponent,
+    NavigationComponent,
+    HomeComponent
+  ],
+  imports: [
+    RouterModule.forRoot(
+      appRoutes, { enableTracing: true, useHash: true }
+    ),
+    BrowserAnimationsModule,
+    PremierModule,
+    BrowserModule,
+// --> add material module there afer browsermodule, order matter
+
+    FormsModule,
+    HttpModule
+
+// insert module imports there
+
+
+  ],
+  providers: [UserService, StorageService],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+

@@ -1,0 +1,13 @@
+    BrowserAnimationsModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
+    HttpModule,
+    FeatureMaterialModule
+  ],
+  providers: [UserService, StorageService, KawaModuleRetrievalService, KawaSidenavService, KawaModuleStackService, ServeurService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
