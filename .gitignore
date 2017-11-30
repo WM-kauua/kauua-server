@@ -43,6 +43,7 @@ Thumbs.db
 
 ## Ignore all kawamodules user interfaces hosted in ./src/app/kawaModules
 src/app/kawaModules/
+!src/app/kawaModules/keeper.git
 
 ## Ignore all kawamodules server plugin hosted in ./server/modules
 server/modules/*
@@ -51,9 +52,10 @@ server/modules/*
 ## Ignore espace de stockage kawamodules storage dir
 fileSystemExposure/
 
-## Ignore config file ( eccess to database )
+## Ignore config file ( access to database )
 server/config/config.json
 
-## Ignore cache, it's rebuilt everytime
+## Ignore cache of espaceDeStockage used by multer
 cache/
+
 
