@@ -45,7 +45,7 @@ Thumbs.db
 src/app/kawaModules/
 
 ## Ignore all kawamodules server plugin hosted in ./server/modules
-server/modules/
+server/modules/*
 !server/modules/index.js
 
 ## Ignore espace de stockage kawamodules storage dir
