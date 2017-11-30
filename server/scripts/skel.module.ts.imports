@@ -14,6 +14,7 @@ import { RouterModule, Routes }                		from '@angular/router';
 import { HttpModule }                           	from '@angular/http';
 import { CUSTOM_ELEMENTS_SCHEMA }               	from '@angular/core';
 import { CommonModule }					from '@angular/common';
+import { HttpClientModule }				from '@angular/common/http' ;
 
 // material module :
 import { FeatureMaterialModule }			from './features/feature-material-module.module';
@@ -38,7 +39,7 @@ import { AreaLoggedRouteComponent }			from './garde/area-logged-route.component'
 import { NavigationLoggedRouteComponent }		from './navigation/navigation-angular-logged.component';
 import { KawaSidenavService }				from './kawa-sidenav.service';
 import { KawaSidenavMenuComponent }			from './kawa-sidenav-menu.component';
-import { ListeDeCoursesModule }				from './kawaModules/liste_de_courses/liste-de-courses.module';
+//import { ListeDeCoursesModule }				from './kawaModules/liste_de_courses/liste-de-courses.module';
 import { KawaModuleStackService }			from './kawa-kawaModule-stack.service';
 import { ServeurService }				from './serveur.service' ;
 
