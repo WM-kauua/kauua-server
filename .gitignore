@@ -42,7 +42,7 @@ testem.log
 Thumbs.db
 
 ## Ignore all kawamodules user interfaces hosted in ./src/app/kawaModules
-src/app/kawaModules/
+src/app/kawaModules/*
 !src/app/kawaModules/keeper.git
 
 ## Ignore all kawamodules server plugin hosted in ./server/modules
